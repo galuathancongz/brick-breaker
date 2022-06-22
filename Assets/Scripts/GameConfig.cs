@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class GameConfig
 {
     // state
     public static readonly string[] AllowedGameModes = {"easy", "normal", "hard", "inhuman"};
+   
+
     public string GameMode
     {
         get => _gameMode;
@@ -23,6 +26,7 @@ public class GameConfig
     private static readonly object padlock = new object();
     private static GameConfig _instance = null;
     public static GameConfig Instance
+        
     {
         get
         {
@@ -49,23 +53,25 @@ public class GameConfig
      */
     public Dictionary<string, object> GetGameModeConfig()
     {
+
+       
         var gameModeConfig = new Dictionary<string, object>();
         
         if(this._gameMode == "easy")
         {
-            gameModeConfig.Add("playerLives", 3);
+            gameModeConfig.Add("playerLives",5 );
             gameModeConfig.Add("gameSpeed", 0.6f);
             gameModeConfig.Add("pointsPerBlock", 50);
         }
         else if (this._gameMode == "normal")
         {
-            gameModeConfig.Add("playerLives", 3);
+            gameModeConfig.Add("playerLives", 5);
             gameModeConfig.Add("gameSpeed", 0.8f);
             gameModeConfig.Add("pointsPerBlock", 100);
         }
         else if (this._gameMode == "hard")
         {
-            gameModeConfig.Add("playerLives", 2);
+            gameModeConfig.Add("playerLives", 3 );
             gameModeConfig.Add("gameSpeed", 1.2f);
             gameModeConfig.Add("pointsPerBlock", 300);
         }

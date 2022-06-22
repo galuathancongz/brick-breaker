@@ -10,6 +10,22 @@ public class LoseCollider : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("BlueGear"))
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Gear"))
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("EmptyGear"))
+        {
+            Destroy(other.gameObject);
+        }
         // ball triggered an event with the lose collider 
         if (other.name.ToLower() == "ball")
         {

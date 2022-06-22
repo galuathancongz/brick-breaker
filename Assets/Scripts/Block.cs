@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    
+    public GameObject Heart;
+    public GameObject Gear;
+    public GameObject BlueGear;
+    public GameObject EmptyGear;
     // configuration
     [SerializeField] public AudioClip destroyedBlockSound;
     [SerializeField] public float soundVolume = 0.05f;
@@ -16,9 +20,11 @@ public class Block : MonoBehaviour
 
     // state
     private int _currentHits = 0;
+    public static List<GameObject> heart = new List<GameObject>();
     
     void Start()
-    {
+    { 
+        //heart = new List<GameObject>();
         // selects other game object without SCENE binding: programatically via API
         _levelController = FindObjectOfType<LevelController>();
         _soundPosition = FindObjectOfType<Camera>().transform.position;
@@ -44,7 +50,22 @@ public class Block : MonoBehaviour
         }
         else
         {
-            DestroyItself();    
+            DestroyItself();
+            int valueLucky = Random.Range(1,10);
+            int valuePotion = Random.Range(1,4);
+            if (valueLucky == 3)
+            {
+                switch (valuePotion)
+                {
+                    case 1:
+                        heart.Add(Instantiate(Heart, transform.position, Quaternion.identity)); break;
+                    case 2: Instantiate(Gear, transform.position, Quaternion.identity); break;
+                    case 3: Instantiate(BlueGear, transform.position, Quaternion.identity); break;
+                    case 4: Instantiate(EmptyGear, transform.position, Quaternion.identity); break;
+
+                }
+
+            }
         }
     }
     

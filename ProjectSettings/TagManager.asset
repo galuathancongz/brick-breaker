@@ -8,6 +8,10 @@ TagManager:
   - Unbreakable
   - Transparent
   - MenuOptionWithChild
+  - Heart
+  - BlueGear
+  - EmptyGear
+  - Gear
   layers:
   - Default
   - TransparentFX

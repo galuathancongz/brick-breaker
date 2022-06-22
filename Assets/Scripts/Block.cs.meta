@@ -3,7 +3,15 @@ guid: 2cdd846b6396e41a8a0438d2463793cd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Heart: {fileID: 8465966629496542007, guid: 1cd096a8955e30d4aac1d8cb29fb741a, type: 3}
+  - Gear: {fileID: 3887836607446366658, guid: 9d8fcb16060b8914cacac506811f8108, type: 3}
+  - BlueGear: {fileID: 5853621964272828863, guid: d2b1777279fb69e4e876dc7c1d4c5b89,
+      type: 3}
+  - EmptyGear: {fileID: 8210771441695359896, guid: 0ee16d8e50d08774fb82286ffa589226,
+      type: 3}
+  - destroyedBlockSound: {instanceID: 0}
+  - destroyedBlockParticlesVFX: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
